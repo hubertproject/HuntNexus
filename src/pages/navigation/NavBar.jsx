@@ -3,9 +3,11 @@ import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 // import { MdOutlineMail } from "react-icons/md";
 import { MdKeyboardArrowDown } from "react-icons/md";
-import { IoIosArrowForward } from "react-icons/io";
+// import { IoIosArrowForward } from "react-icons/io";
 import Logo from '../../assets/logo.png'
 import { useState } from 'react';
+import { AiOutlinePlus } from "react-icons/ai";
+import { HiMiniMinus } from "react-icons/hi2";
 
 const navigation = [
     {
@@ -117,11 +119,13 @@ const NavBar = () => {
                                                     aria-current={item.current ? 'page' : undefined}
                                                 >
                                                     {item.name}
-                                                    <span>
-                                                        <MdKeyboardArrowDown className="h-3 w-3" />
-                                                    </span>
+                                                    {item.children.length > 0 && (
+                                                        <span className=''>
+                                                            <MdKeyboardArrowDown className="h-3 w-3 bg-gray-200 rounded-sm" />
+                                                        </span>
+                                                    )}
                                                 </a>
-                                                {activeItem === index && (
+                                                {activeItem === index && item.children.length > 0 && (
                                                     <div className="absolute mt-2 space-y-2 bg-white shadow-lg rounded-md py-2 p-3 w-48">
                                                         {item.children.map((child) => (
                                                             <a
@@ -142,17 +146,19 @@ const NavBar = () => {
                             <div className="absolute inset-y-0 right-0 gap-2 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                                 <button
                                     type="button"
-                                    className="relative rounded-full bg-primary p-1 text-white hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary"
+                                    className="relative rounded-full p-1 text-gray-500 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary hidden sm:block"
                                 >
-                                    <span className="absolute -inset-1.5" />
-                                    <span className="sr-only">View notifications</span>
-                                    <BellIcon className="h-6 w-6 " aria-hidden="true" />
+                                    <span className="absolute top-0 right-0 -mt-1 -mr-1 rounded-full bg-primary text-white text-xs px-1.5">
+                                        3
+                                    </span>
+                                    {/* <span className="sr-only">View notifications</span> */}
+                                    <BellIcon className="h-6 w-6" aria-hidden="true" />
                                 </button>
 
                                 {/* Profile dropdown */}
                                 <Menu as="div" className="relative ml-3">
                                     <div>
-                                        <Menu.Button className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary">
+                                        <Menu.Button className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-bg-gray-200">
                                             <span className="absolute -inset-1.5" />
                                             <span className="sr-only">Open user menu</span>
                                             <img
@@ -221,22 +227,43 @@ const NavBar = () => {
                     <Disclosure.Panel className="sm:hidden">
                         <div className="space-y-1 px-2 pb-3 pt-2">
                             {navigation.map((item) => (
-                                <Disclosure.Button
-                                    key={item.name}
-                                    as="a"
-                                    href={item.href}
-                                    className={classNames(
-                                        item.current ? 'text-primary' : 'text-gray-600 hover:text-primary',
-                                        'block rounded-md px-3 py-2 text-base font-medium font-quicksand gap-2 flex items-center'
+                                <Disclosure key={item.name}>
+                                    {({ open }) => (
+                                        <>
+                                            <Disclosure.Button
+                                                as="a"
+                                                href={item.href}
+                                                className={classNames(
+                                                    item.current ? 'text-primary' : 'text-gray-600 hover:text-primary',
+                                                    'block rounded-md px-3 py-2 text-base font-medium font-quicksand gap-2 flex items-center justify-between'
+                                                )}
+                                                aria-current={item.current ? 'page' : undefined}
+                                            >
+                                                <span>{item.name}</span>
+                                                {item.children.length > 0 && (
+                                                    <span className="">
+                                                        {open ? (
+                                                            <HiMiniMinus className="h-3 w-3" />
+                                                        ) : (
+                                                            <AiOutlinePlus className="h-3 w-3" />
+                                                        )}
+                                                    </span>
+                                                )}
+                                            </Disclosure.Button>
+                                            <Disclosure.Panel>
+                                                <ul className='pl-4'>
+                                                    {item.children.map((child) => (
+                                                        <li key={child.name} className='mt-1'>
+                                                            <a href={child.href} className='font-quicksand text-xs'>
+                                                                {child.name}
+                                                            </a>
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            </Disclosure.Panel>
+                                        </>
                                     )}
-                                    aria-current={item.current ? 'page' : undefined}
-                                >
-                                    {item.name}
-
-                                    <span>
-                                        <IoIosArrowForward className="h-3 w-3" />
-                                    </span>
-                                </Disclosure.Button>
+                                </Disclosure>
                             ))}
                         </div>
                     </Disclosure.Panel>
