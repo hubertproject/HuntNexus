@@ -1,3 +1,13 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Yeseva+One&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Aclonica&family=Raleway:wght@100;500;600&display=swap"); */
+
+/* tailwindcss base styles */
+@import "tailwindcss/base";
+
+/* tailwindcss component styles */
+@import "tailwindcss/components";
+
+/* tailwindcss utility styles */
+@import "tailwindcss/utilities";
+
