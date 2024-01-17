@@ -5,9 +5,10 @@ import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { MdKeyboardArrowDown } from "react-icons/md";
 // import { IoIosArrowForward } from "react-icons/io";
 import Logo from '../../assets/logo.png'
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { AiOutlinePlus } from "react-icons/ai";
 import { HiMiniMinus } from "react-icons/hi2";
+
 
 const navigation = [
     {
@@ -65,13 +66,17 @@ function classNames(...classes) {
 const NavBar = () => {
 
     const [activeItem, setActiveItem] = useState(null);
+    const timeoutRef = useRef(null);
 
     const handleMouseEnter = (index) => {
+        clearTimeout(timeoutRef.current);
         setActiveItem(index);
     };
 
     const handleMouseLeave = () => {
-        setActiveItem(null);
+        timeoutRef.current = setTimeout(() => {
+            setActiveItem(null);
+        }, 300);
     };
 
 
