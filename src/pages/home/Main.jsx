@@ -1,12 +1,12 @@
 import { IoLocationOutline } from "react-icons/io5";
 // import CardComponent from "../../components/CardComponent";
 import Category from './component/Category'
-
+import Jobs from './component/Jobs'
 
 const Main = () => {
     return (
-        <div className="p-4">
-            <div className="md:mt-[6rem] mt-12 md:pl-24 md:p-0 p-2">
+        <div className="">
+            <div className="md:mt-[6rem] mt-12 md:pl-24 md:p-0 p-6">
                 <h2 className="font-quicksand font-semibold md:text-3xl text-3xl text-gray-700">
                     Hire experts or be hired for any job, any time.
                 </h2>
@@ -14,7 +14,7 @@ const Main = () => {
                     Thousands of small businesses use <span className="text-primary">WorkSeek</span> to turn their ideas into reality.
                 </p>
 
-                <div className="mt-12 md:flex items-center gap-2">
+                <div className="mt-14 md:flex items-center gap-2">
                     <div className="relative ">
                         <div>
                             <label htmlFor="location" className="absolute top-[-1.5rem] font-quicksand text-white pt-1 pb-1 pl-2 pr-2 rounded-md bg-primary">
@@ -70,6 +70,10 @@ const Main = () => {
 
             <div className="mt-6">
                 <Category />
+            </div>
+
+            <div className="mt-6">
+                <Jobs />
             </div>
 
         </div>
