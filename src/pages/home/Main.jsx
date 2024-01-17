@@ -1,5 +1,5 @@
 import { IoLocationOutline } from "react-icons/io5";
-import CardComponent from "../../components/CardComponent";
+// import CardComponent from "../../components/CardComponent";
 // import CityCard from "../../components/CityCard";
 // import CardComponent from "../../components/CardComponent";
 import Category from './component/Category'

@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./CityCard.css";
- 
+
 
 function CityCard() {
   const [slidesToShow, setSlidesToShow] = useState(1);
@@ -71,7 +71,7 @@ function CityCard() {
   return (
     <div>
       <div className="w-full mt-20 overflow-hidden py-5 pr-20 mt-5">
-      <h2 className="text-3xl font-semibold mb-6 font-quicksand text-center">Featured Cities</h2> {/* Add this line for the heading */}
+        <h2 className="text-3xl font-semibold mb-6 font-quicksand text-center">Featured Cities</h2> {/* Add this line for the heading */}
         <Slider {...settings}>
           {data.map((d, index) => (
             <div
@@ -91,7 +91,7 @@ function CityCard() {
                     <p className="text-xl font-semibold">{d.name}</p>
                     <button
                       className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700"
-                       
+
                     >
                       {d.buttonText}
                     </button>
