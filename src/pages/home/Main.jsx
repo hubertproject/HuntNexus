@@ -1,6 +1,6 @@
 import { IoLocationOutline } from "react-icons/io5";
-import CardComponent from "../../components/CardComponent";
-
+// import CardComponent from "../../components/CardComponent";
+import Category from './component/Category'
 
 
 const Main = () => {
@@ -46,7 +46,7 @@ const Main = () => {
                     <button className="bg-primary text-white px-4 py-3 md:mt-6 mt-2 rounded-sm font-quicksand">Search</button>
                 </div>
 
-                <div className="md:mt-10 mt-8 flex items-center gap-12 md:p-0 p-2">
+                <div className="md:mt-12 mt-8 flex items-center gap-12 md:p-0 p-2">
                     <div className="border-r-2 border-gray-300 pr-5">
                         <h2 className="font-quicksand text-3xl font-semibold text-gray-700">1,586</h2>
                         <p className="font-quicksand md:text-md text-xs">Jobs Posted</p>
@@ -63,14 +63,18 @@ const Main = () => {
                     </div>
 
                 </div>
-                <div className="mt-8">
+                {/* <div className="mt-8">
                 <CardComponent />
-                </div>
+                </div> */}
             </div>
- 
+
+            <div className="mt-6">
+                <Category />
+            </div>
+
         </div>
-         
-         
+
+
     )
 }
 export default Main;
