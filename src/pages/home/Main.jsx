@@ -2,6 +2,7 @@ import { IoLocationOutline } from "react-icons/io5";
 // import CardComponent from "../../components/CardComponent";
 import Category from './component/Category'
 import Jobs from './component/Jobs'
+import Footer from '../../components/Footer'
 
 const Main = () => {
     return (
@@ -76,6 +77,10 @@ const Main = () => {
                 <Jobs />
             </div>
 
+
+
+
+            <Footer />
         </div>
 
 
