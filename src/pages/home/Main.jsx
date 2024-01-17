@@ -1,4 +1,6 @@
 import { IoLocationOutline } from "react-icons/io5";
+import CardComponent from "../../components/CardComponent";
+
 
 
 const Main = () => {
@@ -61,9 +63,14 @@ const Main = () => {
                     </div>
 
                 </div>
+                <div className="mt-8">
+                <CardComponent />
+                </div>
             </div>
-
+ 
         </div>
+         
+         
     )
 }
 export default Main;
