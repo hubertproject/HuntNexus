@@ -1,5 +1,6 @@
 import { IoLocationOutline } from "react-icons/io5";
-// import CardComponent from "../../components/CardComponent";
+import CardComponent from "../../components/CardComponent";
+import CityCard from "../../components/CityCard";
 import Category from './component/Category'
 import Jobs from './component/Jobs'
 
@@ -63,9 +64,9 @@ const Main = () => {
                     </div>
 
                 </div>
-                {/* <div className="mt-8">
+                <div className="mt-8">
                 <CardComponent />
-                </div> */}
+                </div>
             </div>
 
             <div className="mt-6">
@@ -74,6 +75,10 @@ const Main = () => {
 
             <div className="mt-6">
                 <Jobs />
+            </div>
+
+            <div className="mt-6">
+                <CityCard />
             </div>
 
         </div>
