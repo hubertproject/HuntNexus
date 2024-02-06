@@ -1,0 +1,4 @@
+.slick-slide.clicked {
+    transform: scale(0.9); /* Adjust the scale value for the desired zoom effect */
+    transition: transform 0.3s ease; /* Adjust the transition duration and easing function */
+  }
