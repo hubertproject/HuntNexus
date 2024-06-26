@@ -14,7 +14,7 @@ const Main = () => {
                     Hire experts or be hired for any job, any time.
                 </h2>
                 <p className="font-quicksand md:text-2xl text-md md:mt-2 mt-4 md:max-w-[600px] max-w-[500px] text-gray-600">
-                    Thousands of small businesses use <span className="text-primary">WorkSeek</span> to turn their ideas into reality.
+                    Thousands of small businesses use <span className="text-primary">WorkHub</span> to turn their ideas into reality.
                 </p>
 
                 <div className="mt-14 md:flex items-center gap-2">
