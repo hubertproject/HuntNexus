@@ -1,13 +1,18 @@
 import { IoLocationOutline } from "react-icons/io5";
 import CityCard from "../../components/CityCard";
 import CardComponent from "../../components/CardComponent";
-import Category from './component/Category'
-import Jobs from './component/Jobs'
-import Footer from '../../components/Footer'
+import Category from './component/Category';
+import Jobs from './component/Jobs';
+import Footer from '../../components/Footer';
+import Hero from './component/Hero';
+
 
 const Main = () => {
     return (
+
+        
         <div className="">
+             <Hero />
             <div className="md:mt-[6rem] mt-12 md:pl-24 md:p-0 p-6">
                 <h2 className="font-quicksand font-semibold md:text-3xl text-3xl text-gray-700">
                     Hire experts or be hired for any job, any time.
