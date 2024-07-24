@@ -40,7 +40,7 @@ const Main = () => {
             icon: <SlPicture className="h-12 w-12" />,
             figure: 130,
             title: "Graphics & Design",
-            description: "Creative Director, Web Designer, and More",
+            description: "Creative Director, UI/UX Designer, and More",
         },
         {
             icon: <BsMegaphone className="h-12 w-12" />,
