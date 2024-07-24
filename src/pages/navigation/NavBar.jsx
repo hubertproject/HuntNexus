@@ -1,9 +1,9 @@
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
-// import { MdOutlineMail } from "react-icons/md";
+ 
 import { MdKeyboardArrowDown } from "react-icons/md";
-// import { IoIosArrowForward } from "react-icons/io";
+ 
 import Logo from '../../assets/logo.png'
 import { useState, useRef } from 'react';
 import { AiOutlinePlus } from "react-icons/ai";
